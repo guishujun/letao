@@ -58,7 +58,7 @@ $(function () {
         type: "get",
         url: "/employee/checkRootLogin",
         success: function (info) {
-            console.log(info);
+            //console.log(info);
             //    判断info.error是否是400
             if (info.error === 400) {
                 location.href = "login.html";
