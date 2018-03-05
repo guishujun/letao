@@ -47,6 +47,12 @@ img{
     margin-top: 8px;
     text-align: center;
 }
+.lt_footer li.now a{
+    color: darkgoldenrod;
+}
+.lt_footer li.now p{
+    color: darkgoldenrod;
+}
 .lt_footer li a{
     color: #fff;
 }
