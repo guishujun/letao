@@ -107,6 +107,27 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
+
+<!--退出登录的模态框-->
+<div class="modal fade" id="userModal"  tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+                <h4 class="modal-title">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span>  你确定要执行此操作吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn_confirm">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!--准备模板-->
 <script type="text/html" id="tpl">
     {{each rows v i}}
@@ -115,7 +136,7 @@
         <td>{{v.username}}</td>
         <td>{{v.mobile}}</td>
         <td>{{v.isDelete === 1?'正常':'禁用'}}</td>
-        <td>
+        <td data-id="{{v.id}}">
             {{if v.isDelete === 0}}
             <button class="btn btn-success btn-sm">启用</button>
             {{else}}

@@ -43,4 +43,42 @@ $(function(){
     }
 
     render();
+
+
+//    启用 禁用用户
+    $('tbody').on('click','.btn',function(){
+        //显示模态框
+        $('#userModal').modal('show');
+        //获取到点击的按钮所在的用户的ID
+        var id=$(this).parent().data("id");
+        var isDelete = $(this).hasClass("btn-success")?'1':'0';
+        console.log(id, isDelete);
+
+        //给确定按钮添加点击事件
+        $('.btn_confirm').off().on("click",function(){
+
+            // 发送ajax请求
+            $.ajax({
+                type:"post",
+                url:"/user/updateUser",
+                data:{
+                    id:id,
+                    isDelete:isDelete
+                },
+                success:function(info){
+                    if(info.success){
+                        //关闭模态框
+                        $('#userModal').modal('hide');
+                        //重新渲染
+                       render();
+                    }
+                }
+
+            });
+        });
+    });
+
+
+
+
 });
