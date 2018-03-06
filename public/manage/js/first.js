@@ -8,6 +8,7 @@ $(function () {
   var currentPage = 1;
   var pageSize = 5;
 
+  //渲染函数
   function render(){
     //发送ajax请求，获取数据
     $.ajax({
