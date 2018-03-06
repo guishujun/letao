@@ -63,11 +63,28 @@
                 </ol>
                 <!--内容-->
                 <div class="lt_content">
-                    <div class="charts_1 pull-left">11</div>
-                    <div class="charts_2 pull-right">22</div>
+                    <button class="btn btn-default btn_add mb_20">添加分类</button>
+
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th width="20%">序号</th>
+                            <th width="80%">分类名称</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>户外馆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!--分页标签 指定一个ID-->
+                    <div class="text-right">
+                        <ul id="paginator"> </ul>
+                    </div>
                 </div>
-        
-        
              </div>
     </div>
 <!--退出登录的模态框-->
@@ -94,5 +111,5 @@
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
-<script src="js/login.js"></script>
+<script src="js/first.js"></script>
 </html>
