@@ -51,6 +51,7 @@ $(function () {
   //表单校验功能
   var $form = $("#form");
   $form.bootstrapValidator({
+    //小图标
     feedbackIcons:{
       valid: 'glyphicon glyphicon-ok',
       invalid:'glyphicon glyphicon-remove',

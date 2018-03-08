@@ -1,75 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>二级分类</title>
-  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
-  <link rel="stylesheet" href="lib/nprogress/nprogress.css">
-  <link rel="stylesheet" href="css/common.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二级分类</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 <!--侧边栏部分-->
-    <div class="lt_aside">
-        <div class="brand">
-            <a href="index.html">黑马18期</a>
-        </div>
-        <div class="user">
-            <img src="images/default.jpg" alt="">
-            <p>超级管理员</p>
-        </div>
-        <div class="nav">
-                <ul>
-                        <li>
-                          <a href="user.html" >
-                            <span class="glyphicon glyphicon-user"></span>
-                            用户管理
-                          </a>
-                        </li>
-                        <li>
-                          <a href="javascript:;">
-                            <span class="glyphicon glyphicon-list"></span>
-                            分类管理
-                          </a>
-                          <div class="second" style="display: block">
-                            <a href="first.html">一级分类</a>
-                            <a href="second.html"  class="now">二级分类</a>
-                          </div>
-                        </li>
-                        <li>
-                          <a href="product.html">
-                            <span class="glyphicon glyphicon-tags"></span>
-                            商品管理
-                          </a>
-                        </li>
-                      </ul>
-        </div>
+<div class="lt_aside">
+    <div class="brand">
+        <a href="index.html">黑马18期</a>
     </div>
-<!--主体部分-->
-    <div class="lt_main">
-            <div class="lt_header">
-                <a href="javascript:;" class="pull-left icon_menu"><span class="glyphicon glyphicon-align-justify"></span></a>
-                <a href="javascript:;" class="pull-right icon_logout"><span class="glyphicon glyphicon-log-out"></span></a>
-             </div>
-                
-            <div css="container-fluid">
-                <!--路径导航-->
-                <ol class="breadcrumb">
-                    <li><a href="#">管理系统</a></li>
-                    <li class="active">分类管理</li>
-                    <li class="active">二级分类</li>
-                </ol>
-                <!--内容-->
-                <div class="lt_content">
-                    <div class="charts_1 pull-left">11</div>
-                    <div class="charts_2 pull-right">22</div>
+    <div class="user">
+        <img src="images/default.jpg" alt="">
+        <p>超级管理员</p>
+    </div>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="user.html" >
+                    <span class="glyphicon glyphicon-user"></span>
+                    用户管理
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="glyphicon glyphicon-list"></span>
+                    分类管理
+                </a>
+                <div class="second" style="display: block">
+                    <a href="first.html">一级分类</a>
+                    <a href="second.html"  class="now">二级分类</a>
                 </div>
-        
-        
-             </div>
+            </li>
+            <li>
+                <a href="product.html">
+                    <span class="glyphicon glyphicon-tags"></span>
+                    商品管理
+                </a>
+            </li>
+        </ul>
     </div>
+</div>
+<!--主体部分-->
+<div class="lt_main">
+    <div class="lt_header">
+        <a href="javascript:;" class="pull-left icon_menu"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a href="javascript:;" class="pull-right icon_logout"><span class="glyphicon glyphicon-log-out"></span></a>
+    </div>
+
+    <div css="container-fluid">
+        <!--路径导航-->
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li class="active">分类管理</li>
+            <li class="active">一级分类</li>
+        </ol>
+        <!--内容-->
+        <div class="lt_content">
+            <button class="btn btn-default btn_add mb_20">添加分类</button>
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th width="10%">序号</th>
+                    <th width="30%">一级分类名称</th>
+                    <th width="30%">二级分类名称</th>
+                    <th width="30%">二级分类logo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--数据渲染处1-->
+
+                </tbody>
+            </table>
+
+            <!--分页标签 指定一个ID-->
+            <div class="text-right">
+                <ul id="paginator"></ul>
+            </div>
+        </div>
+    </div>
+</div>
 <!--退出登录的模态框-->
 <div class="modal fade" id="logoutModal"  tabindex="-1" role="dialog">
     <div class="modal-dialog modal-sm" role="document">
@@ -88,11 +105,92 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+<!--添加分类模态框-->
+<div class="modal fade" id="secondModal"  tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+                <h4 class="modal-title">添加分类</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                <div class="form-group">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            <span class="dropdown_text">请选择一级分类</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                                <!--数据渲染处2-->
+                        </ul>
+                        <input type="hidden" name="categoryId">
+                    </div>
+                </div>
+
+
+                        <div class="form-group">
+                            <input type="text" autocomplete="off" class="form-control" placeholder="请输入二级分类的名称" name="brandName">
+                        </div>
+
+
+                    <div class="form-group">
+                        <div class="file_box">
+                            <label for="fileupload" class="btn btn-default">上传图片 </label>
+                            <!--type:file 只有这样才能选择图片 -->
+                            <!--ID 方便获取这个input-->
+                            <!--name  服务器通过这个name属性才能获取到对应的图片-->
+                            <!--服务器上传的地址-->
+                            <input type="file" id="fileupload" style="display:none " class="btn btn-default" name="pic1" data-url="/category/addSecondCategoryPic">
+                        </div>
+                    </div>
+
+                    <div class="form-group img_box">
+                        <img src="images/none.png" width="100" height="100" alt="">
+                        <input type="hidden" name="brandLogo">
+                        <input type="hidden" name="hot" value="1">
+                    </div>
+                </form>
+            </div>
+            <!--h5新增属性 相当于给input 制定form属性-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" form ="form" class="btn btn-primary">添加</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!--准备模板-->
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.categoryName}}</td>
+        <td>{{v.brandName}}</td>
+        <td><img src="{{v.brandLogo?v.brandLogo:'images/none.png'}}" width="50" height="45" alt=""></td>
+    </tr>
+    {{/each}}
+</script>
+
+<!--第二个模板-->
+<script type="text/html" id="tpl2">
+    {{each rows v i}}
+    <li data-id="{{v.id}}"><a href="javascript:;">{{v.categoryName}}</a></li>
+    {{/each}}
+</script>
 </body>
 <script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
-<script src="js/login.js"></script>
+<script src="js/second.js"></script>
 </html>
